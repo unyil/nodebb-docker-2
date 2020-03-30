@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  nodebb13x:
+    image: vimagick/nodebb
+    ports:
+      - "4413:4413"
+    expose:
+      - 4413
+    environment:
+      - VIRTUAL_HOST=kode13.my.id
+    networks:
+      - nginx_reverse-proxy
+      - backend1
+    volumes:
+      - ./data:/var/lib/nodebb
+      - /usr/src/nodebb/build
+      - /usr/src/nodebb/node_modules
+      - ./data/uploads:/usr/src/nodebb/public/uploads
+    restart: always
+
+  mongo13:
+    image: "mongo:latest"
+    command: mongod --port 28013
+    networks:
+      - backend1
+    ports:
+      - "28013:28013"
+    volumes:
+      - ./data/mongodb/db:/data/db
+    restart: always
+
+networks:
+    backend1:
+    nginx_reverse-proxy:
+       external: true

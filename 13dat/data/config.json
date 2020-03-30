@@ -1,0 +1,14 @@
+{
+    "url": "http://kode13.my.id:4413",
+    "secret": "b95fb44f-2731-4dd6-8ad8-c8ffc0c68f57",
+    "database": "mongo",
+    "mongo": {
+        "host": "mongo13",
+        "port": "28013",
+        "username": "",
+        "password": "",
+        "database": "nodebb",
+        "uri": ""
+    },
+    "port": "4413"
+}
