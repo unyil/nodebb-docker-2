@@ -1,0 +1,14 @@
+{
+    "url": "http://kode11.my.id",
+    "secret": "a42a96ed-4454-46cc-ae89-85bc4d1a59e7",
+    "database": "mongo",
+    "mongo": {
+        "host": "mongo11",
+        "port": "28011",
+        "username": "",
+        "password": "",
+        "database": "nodebb",
+        "uri": ""
+    },
+    "port": "4411"
+}

@@ -1,0 +1,11 @@
+*.log
+10dat/data/mongodb/
+*dat/data/mongodb/
+10dat/data/uploads/
+11dat/data/uploads/
+12dat/data/uploads/
+13dat/data/uploads/
+14dat/data/uploads/
+**dat/data/uploads/
+
+!**dat/data/config.json

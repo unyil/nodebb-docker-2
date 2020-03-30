@@ -1,8 +1,7 @@
 {
     "url": "http://kode10.my.id",
-    "secret": "baac98e5-a6b7-437b-81a5-5faa960864a0",
+    "secret": "ce1c79bd-ff25-4845-8cb4-11640796b455",
     "database": "mongo",
-    "port": "4410",
     "mongo": {
         "host": "mongo10",
         "port": "28010",
@@ -10,5 +9,6 @@
         "password": "",
         "database": "nodebb",
         "uri": ""
-    }
+    },
+    "port": "4410"
 }

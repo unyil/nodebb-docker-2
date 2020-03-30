@@ -1,14 +1,14 @@
 version: '3.7'
 
 services:
-  nodebb10x:
+  nodebb11x:
     image: vimagick/nodebb
     ports:
-      - "4410:4410"
+      - "4411:4411"
     expose:
-      - 4410
+      - 4411
     environment:
-      - VIRTUAL_HOST=kode10.my.id
+      - VIRTUAL_HOST=kode11.my.id
     networks:
       - nginx_reverse-proxy
       - backend1
@@ -19,13 +19,13 @@ services:
       - ./data/uploads:/usr/src/nodebb/public/uploads
     restart: always
 
-  mongo10:
+  mongo11:
     image: "mongo:latest"
-    command: mongod --port 28010
+    command: mongod --port 28011
     networks:
       - backend1
     ports:
-      - "28010:28010"
+      - "28011:28011"
     volumes:
       - ./data/mongodb/db:/data/db
     restart: always
