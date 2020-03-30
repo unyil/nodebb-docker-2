@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  nodebb12x:
+    image: vimagick/nodebb
+    ports:
+      - "4412:4412"
+    expose:
+      - 4412
+    environment:
+      - VIRTUAL_HOST=kode12.my.id
+    networks:
+      - nginx_reverse-proxy
+      - backend1
+    volumes:
+      - ./data:/var/lib/nodebb
+      - /usr/src/nodebb/build
+      - /usr/src/nodebb/node_modules
+      - ./data/uploads:/usr/src/nodebb/public/uploads
+    restart: always
+
+  mongo12:
+    image: "mongo:latest"
+    command: mongod --port 28012
+    networks:
+      - backend1
+    ports:
+      - "28012:28012"
+    volumes:
+      - ./data/mongodb/db:/data/db
+    restart: always
+
+networks:
+    backend1:
+    nginx_reverse-proxy:
+       external: true
